@@ -21,12 +21,18 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot {
 
+  public static OI m_oi;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
    */
   @Override
   public void robotInit() {
+    // Subsystems should be initialized first
+
+    // Initialize the OI afterwards
+    m_oi = new OI();
   }
 
   /**
