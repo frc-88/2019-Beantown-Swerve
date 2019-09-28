@@ -22,9 +22,9 @@ public class LAPG extends Subsystem {
     private boolean hasPanel;
 
     public LAPG() {
-        deployPiston = new DoubleSolenoid(RobotMap.LAPG_DEPLOY_PCM, RobotMap.LAPG_DEPLOY_FORWARD, RobotMap.LAPG_DEPLOY_REVERSE);
-        grabPiston = new DoubleSolenoid(RobotMap.LAPG_GRAB_PCM, RobotMap.LAPG_GRAB_FORWARD, RobotMap.LAPG_GRAB_REVERSE);
-        grabNeutral = new DoubleSolenoid(RobotMap.LAPG_NEUTRAL_PCM, RobotMap.LAPG_NEUTRAL_FORWARD, RobotMap.LAPG_NEUTRAL_REVERSE);
+        deployPiston = new DoubleSolenoid(RobotMap.LAPG_DEPLOY_FORWARD, RobotMap.LAPG_DEPLOY_REVERSE);
+        grabPiston = new DoubleSolenoid(RobotMap.LAPG_GRAB_FORWARD, RobotMap.LAPG_GRAB_REVERSE);
+        grabNeutral = new DoubleSolenoid(RobotMap.LAPG_NEUTRAL_FORWARD, RobotMap.LAPG_NEUTRAL_REVERSE);
         grabSwitch = new DigitalInput(RobotMap.LAPG_GRAB_SWITCH);
 
         open();

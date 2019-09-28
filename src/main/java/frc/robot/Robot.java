@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.subsystems.LAPG;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,6 +22,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends TimedRobot {
 
+  public static LAPG m_lapg;
+
   public static OI m_oi;
 
   /**
@@ -30,6 +33,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     // Subsystems should be initialized first
+    m_lapg = new LAPG();
 
     // Initialize the OI afterwards
     m_oi = new OI();
