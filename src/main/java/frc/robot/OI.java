@@ -9,9 +9,9 @@ public class OI {
 
     public OI() {
 
-        driverController = new TJController(0);
-        operatorController = new TJController(1);
+        driverController = new TJController(RobotMap.DRIVER_CONTROLLER_PORT);
+        operatorController = new TJController(RobotMap.OPERATOR_CONTROLLER_PORT);
 
-        
+
     }
 }
