@@ -1,8 +1,8 @@
-package org.frcteam2910.c2019.commands;
+package frc.robot.commands.swerve;
 
 import edu.wpi.first.wpilibj.command.Command;
-import org.frcteam2910.c2019.Robot;
-import org.frcteam2910.c2019.subsystems.DrivetrainSubsystem;
+import frc.robot.Robot;
+import frc.robot.subsystems.DrivetrainSubsystem;
 import org.frcteam2910.common.math.Rotation2;
 import org.frcteam2910.common.math.Vector2;
 
@@ -13,14 +13,14 @@ public class HolonomicDriveCommand extends Command {
 
     @Override
     protected void execute() {
-        boolean ignoreScalars = Robot.getOi().primaryController.getLeftBumperButton().get();
+        boolean ignoreScalars = Robot.m_oi.driverController.getLeftBumperButton().get();
 
-        double forward = Robot.getOi().primaryController.getLeftYAxis().get(true);
-        double strafe = Robot.getOi().primaryController.getLeftXAxis().get(true);
-        double rotation = Robot.getOi().primaryController.getRightXAxis().get(true, ignoreScalars);
+        double forward = Robot.m_oi.driverController.getLeftYAxis().get(true);
+        double strafe = Robot.m_oi.driverController.getLeftXAxis().get(true);
+        double rotation = Robot.m_oi.driverController.getRightXAxis().get(true, ignoreScalars);
 
-        boolean robotOriented = Robot.getOi().primaryController.getXButton().get();
-        boolean reverseRobotOriented = Robot.getOi().primaryController.getYButton().get();
+        boolean robotOriented = Robot.m_oi.driverController.getXButton().get();
+        boolean reverseRobotOriented = Robot.m_oi.driverController.getYButton().get();
 
         Vector2 translation = new Vector2(forward, strafe);
 

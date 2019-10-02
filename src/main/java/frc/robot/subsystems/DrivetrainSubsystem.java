@@ -17,6 +17,7 @@ import org.frcteam2910.common.robot.subsystems.SwerveDrivetrain;
 import org.frcteam2910.common.util.DrivetrainFeedforwardConstants;
 import org.frcteam2910.common.util.HolonomicDriveSignal;
 import org.frcteam2910.common.util.HolonomicFeedforward;
+import frc.robot.Robot;
 
 import java.util.Optional;
 
@@ -71,12 +72,13 @@ public class DrivetrainSubsystem extends SwerveDrivetrain {
         double frontRightAngleOffset = FRONT_RIGHT_ANGLE_OFFSET_COMPETITION;
         double backLeftAngleOffset = BACK_LEFT_ANGLE_OFFSET_COMPETITION;
         double backRightAngleOffset = BACK_RIGHT_ANGLE_OFFSET_COMPETITION;
-        if (Superstructure.getInstance().isPracticeBot()) {
-            frontLeftAngleOffset = FRONT_LEFT_ANGLE_OFFSET_PRACTICE;
-            frontRightAngleOffset = FRONT_RIGHT_ANGLE_OFFSET_PRACTICE;
-            backLeftAngleOffset = BACK_LEFT_ANGLE_OFFSET_PRACTICE;
-            backRightAngleOffset = BACK_RIGHT_ANGLE_OFFSET_PRACTICE;
-        }
+        // if (Superstructure.getInstance().isPracticeBot()) {
+        //     frontLeftAngleOffset = FRONT_LEFT_ANGLE_OFFSET_PRACTICE;
+        //     frontRightAngleOffset = FRONT_RIGHT_ANGLE_OFFSET_PRACTICE;
+        //     backLeftAngleOffset = BACK_LEFT_ANGLE_OFFSET_PRACTICE;
+        //     backRightAngleOffset = BACK_RIGHT_ANGLE_OFFSET_PRACTICE;
+        // }
+        //because commenting code is way more fun than deleting it
 
         SwerveModule frontLeftModule = new Mk2SwerveModule(
                 new Vector2(-TRACKWIDTH / 2.0, WHEELBASE / 2.0),
@@ -220,7 +222,7 @@ public class DrivetrainSubsystem extends SwerveDrivetrain {
 
     @Override
     public Gyroscope getGyroscope() {
-        return Superstructure.getInstance().getGyroscope();
+        return Robot.m_navx; 
     }
 
     @Override

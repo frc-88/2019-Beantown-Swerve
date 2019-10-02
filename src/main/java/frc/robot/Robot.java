@@ -8,9 +8,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.SPI;
+import frc.robot.drivers.NavX;
 import frc.robot.subsystems.LAPG;
 
 /**
@@ -23,6 +26,8 @@ import frc.robot.subsystems.LAPG;
 public class Robot extends TimedRobot {
 
   public static LAPG m_lapg;
+
+  public static NavX m_navx;
 
   public static OI m_oi;
 
@@ -37,6 +42,9 @@ public class Robot extends TimedRobot {
 
     // Initialize the OI afterwards
     m_oi = new OI();
+
+    //Init NavX with 2910 driver
+    m_navx = new NavX(SPI.Port.kMXP);
   }
 
   /**
