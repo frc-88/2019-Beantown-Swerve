@@ -166,6 +166,7 @@ public class DrivetrainSubsystem extends SwerveDrivetrain {
         } else {
             synchronized (lock) {
                 localSignal = this.signal;
+                System.out.print("signal " + signal);
             }
         }
 

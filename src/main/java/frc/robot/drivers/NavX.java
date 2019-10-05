@@ -1,6 +1,8 @@
 package frc.robot.drivers;
 
 import com.kauailabs.navx.frc.AHRS;
+
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.SPI;
 import org.frcteam2910.common.drivers.Gyroscope;
 import org.frcteam2910.common.math.Rotation2;
@@ -14,6 +16,10 @@ public final class NavX extends Gyroscope {
 
     public NavX(SPI.Port port, byte updateRate) {
         navX = new AHRS(port, updateRate);
+    }
+    
+    public NavX(I2C.Port port){
+        navX = new AHRS(port , (byte) 200);
     }
 
     @Override

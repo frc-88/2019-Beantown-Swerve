@@ -14,7 +14,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.SPI;
 import frc.robot.drivers.NavX;
+import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.LAPG;
+
+import org.frcteam2910.common.robot.subsystems.SubsystemManager;
+
+import edu.wpi.first.wpilibj.I2C;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,6 +29,8 @@ import frc.robot.subsystems.LAPG;
  * project.
  */
 public class Robot extends TimedRobot {
+  
+  public static SubsystemManager subsystemManager;
 
   public static LAPG m_lapg;
 
@@ -38,13 +45,17 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     // Subsystems should be initialized first
+
+    subsystemManager = new SubsystemManager(
+      DrivetrainSubsystem.getInstance()
+    );
     m_lapg = new LAPG();
 
     // Initialize the OI afterwards
     m_oi = new OI();
 
     //Init NavX with 2910 driver
-    m_navx = new NavX(SPI.Port.kMXP);
+    m_navx = new NavX(I2C.Port.kOnboard);
   }
 
   /**

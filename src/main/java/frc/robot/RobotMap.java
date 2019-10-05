@@ -6,18 +6,20 @@ public class RobotMap {
     // LAPG
     ///////////////////////////////////////////////////////////////////////////
 
-    public static final int LAPG_DEPLOY_FORWARD = 0;
-    public static final int LAPG_DEPLOY_REVERSE = 1;
-    public static final int LAPG_GRAB_FORWARD = 2;
-    public static final int LAPG_GRAB_REVERSE = 3;
-    public static final int LAPG_NEUTRAL_FORWARD = 4;
-    public static final int LAPG_NEUTRAL_REVERSE = 5;
+    public static final int LAPG_DEPLOY_FORWARD = 7;
+    public static final int LAPG_DEPLOY_REVERSE = 0;
+    public static final int LAPG_GRAB_FORWARD = 5;
+    public static final int LAPG_GRAB_REVERSE = 2;
+    public static final int LAPG_NEUTRAL_FORWARD = 1;
+    public static final int LAPG_NEUTRAL_REVERSE = 6;
 
-    public static final int LAPG_GRAB_SWITCH = 0;
+    public static final int LAPG_GRAB_SWITCH = 8;
 
     public static final long LAPG_CLOSE_TIME = 500000;
     public static final long LAPG_OPEN_TIME = 500000;
     public static final long LAPG_RETRACT_TIME = 250000;
+    
+    public static final int LAPG_PCM_CAN_ID = 21;
 
     ///////////////////////////////////////////////////////////////////////////
     // MK2 SWERVE
