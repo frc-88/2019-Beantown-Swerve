@@ -57,6 +57,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    SmartDashboard.putBoolean("LAPG Switch", m_lapg.getSwitch());
   }
 
   /**

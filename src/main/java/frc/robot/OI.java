@@ -1,8 +1,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.lapg.LAPGActive;
+import frc.robot.commands.lapg.LAPGClose;
 import frc.robot.commands.lapg.LAPGDeploy;
 import frc.robot.commands.lapg.LAPGGrab;
+import frc.robot.commands.lapg.LAPGNeutral;
 import frc.robot.commands.lapg.LAPGRetract;
 import frc.robot.commands.lapg.LAPGScore;
 import frc.robot.util.TJController;
@@ -34,6 +38,14 @@ public class OI {
                 return operatorController.getRightTrigger() > 0.5;
             }
         }.whenActive(new LAPGGrab());
+
+        SmartDashboard.putData(new LAPGGrab());
+        SmartDashboard.putData(new LAPGClose());
+        SmartDashboard.putData(new LAPGNeutral());
+        SmartDashboard.putData(new LAPGActive());
+        SmartDashboard.putData(new LAPGDeploy());
+        SmartDashboard.putData(new LAPGRetract());
+
         
     }
 }
