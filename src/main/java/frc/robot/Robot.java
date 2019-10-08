@@ -16,9 +16,11 @@ import edu.wpi.first.wpilibj.SPI;
 import frc.robot.drivers.NavX;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.LAPG;
+import frc.robot.subsystems.Limelight;
 
 import org.frcteam2910.common.robot.subsystems.SubsystemManager;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.I2C;
 
 /**
@@ -38,6 +40,11 @@ public class Robot extends TimedRobot {
 
   public static OI m_oi;
 
+  public static Limelight m_limelight;
+
+
+  private boolean firstTeleopInit = true;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -45,17 +52,25 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     // Subsystems should be initialized first
+    //Init NavX with 2910 driver
+    m_navx = new NavX(I2C.Port.kOnboard);
+
+    m_navx.calibrate();
+
 
     subsystemManager = new SubsystemManager(
       DrivetrainSubsystem.getInstance()
     );
+    subsystemManager.enableKinematicLoop(.01);
     m_lapg = new LAPG();
 
     // Initialize the OI afterwards
     m_oi = new OI();
 
-    //Init NavX with 2910 driver
-    m_navx = new NavX(I2C.Port.kOnboard);
+    m_limelight = new Limelight();
+
+    CameraServer.getInstance().startAutomaticCapture();
+
   }
 
   /**
@@ -69,6 +84,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     SmartDashboard.putBoolean("LAPG Switch", m_lapg.getSwitch());
+    subsystemManager.outputToSmartDashboard();
   }
 
   /**
@@ -107,5 +123,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void testPeriodic() {
+  }
+
+  @Override
+  public void teleopInit(){
+    if(firstTeleopInit){
+      m_navx.calibrate();
+      firstTeleopInit = false;
+    }
   }
 }

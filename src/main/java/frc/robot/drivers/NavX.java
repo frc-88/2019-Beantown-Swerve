@@ -29,12 +29,12 @@ public final class NavX extends Gyroscope {
 
     @Override
     public Rotation2 getUnadjustedAngle() {
-        return Rotation2.fromRadians(getAxis(Axis.YAW));
+        return Rotation2.fromRadians((-1) * getAxis(Axis.YAW));
     }
 
     @Override
     public double getUnadjustedRate() {
-        return navX.getRate();
+        return (-1) * navX.getRate();
     }
 
     public double getAxis(Axis axis) {

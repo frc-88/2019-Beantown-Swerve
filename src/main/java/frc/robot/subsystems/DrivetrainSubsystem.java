@@ -31,10 +31,10 @@ public class DrivetrainSubsystem extends SwerveDrivetrain {
             new CentripetalAccelerationConstraint(25.0 * 12.0)
     };
 
-    private static final double FRONT_LEFT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-50.00 + 180.0);
-    private static final double FRONT_RIGHT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-284.47 + 180.0);
-    private static final double BACK_LEFT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-331.52 + 180.0);
-    private static final double BACK_RIGHT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-209.22);
+    private static final double FRONT_LEFT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-175.3);
+    private static final double FRONT_RIGHT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-169.8);
+    private static final double BACK_LEFT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-178.3);
+    private static final double BACK_RIGHT_ANGLE_OFFSET_COMPETITION = Math.toRadians(-172.0);
     private static final double FRONT_LEFT_ANGLE_OFFSET_PRACTICE = Math.toRadians(-56.53 + 180);
     private static final double FRONT_RIGHT_ANGLE_OFFSET_PRACTICE = Math.toRadians(-109.38 + 180);
     private static final double BACK_LEFT_ANGLE_OFFSET_PRACTICE = Math.toRadians(-4.21 + 180);
@@ -166,7 +166,6 @@ public class DrivetrainSubsystem extends SwerveDrivetrain {
         } else {
             synchronized (lock) {
                 localSignal = this.signal;
-                System.out.print("signal " + signal);
             }
         }
 

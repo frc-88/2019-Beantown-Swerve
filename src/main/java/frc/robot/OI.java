@@ -7,6 +7,7 @@ import frc.robot.commands.lapg.LAPGClose;
 import frc.robot.commands.lapg.LAPGDeploy;
 import frc.robot.commands.lapg.LAPGGrab;
 import frc.robot.commands.lapg.LAPGNeutral;
+import frc.robot.commands.lapg.LAPGOpen;
 import frc.robot.commands.lapg.LAPGRetract;
 import frc.robot.commands.lapg.LAPGScore;
 import frc.robot.util.TJController;
@@ -30,16 +31,16 @@ public class OI {
             public boolean get() {
                 return operatorController.getLeftTrigger() > 0.5;
             }
-        }.whenActive(new LAPGScore());
+        }.whenActive(new LAPGGrab());
         new Trigger(){
         
             @Override
             public boolean get() {
                 return operatorController.getRightTrigger() > 0.5;
             }
-        }.whenActive(new LAPGGrab());
+        }.whenActive(new LAPGScore());
 
-        SmartDashboard.putData(new LAPGGrab());
+        SmartDashboard.putData(new LAPGOpen());
         SmartDashboard.putData(new LAPGClose());
         SmartDashboard.putData(new LAPGNeutral());
         SmartDashboard.putData(new LAPGActive());

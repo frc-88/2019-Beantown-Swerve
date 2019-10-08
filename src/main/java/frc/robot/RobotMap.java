@@ -10,8 +10,8 @@ public class RobotMap {
     public static final int LAPG_DEPLOY_REVERSE = 0;
     public static final int LAPG_GRAB_FORWARD = 5;
     public static final int LAPG_GRAB_REVERSE = 2;
-    public static final int LAPG_NEUTRAL_FORWARD = 1;
-    public static final int LAPG_NEUTRAL_REVERSE = 6;
+    public static final int LAPG_NEUTRAL_FORWARD = 6;
+    public static final int LAPG_NEUTRAL_REVERSE = 1;
 
     public static final int LAPG_GRAB_SWITCH = 8;
 
@@ -25,19 +25,19 @@ public class RobotMap {
     // MK2 SWERVE
     ///////////////////////////////////////////////////////////////////////////
 
-    public static final int DRIVETRAIN_FRONT_LEFT_ANGLE_MOTOR = 14;
+    public static final int DRIVETRAIN_FRONT_LEFT_ANGLE_MOTOR = 3;
     public static final int DRIVETRAIN_FRONT_LEFT_ANGLE_ENCODER = 3;
     public static final int DRIVETRAIN_FRONT_LEFT_DRIVE_MOTOR = 15;
 
-    public static final int DRIVETRAIN_FRONT_RIGHT_ANGLE_MOTOR = 12;
+    public static final int DRIVETRAIN_FRONT_RIGHT_ANGLE_MOTOR = 2;
     public static final int DRIVETRAIN_FRONT_RIGHT_ANGLE_ENCODER = 2;
     public static final int DRIVETRAIN_FRONT_RIGHT_DRIVE_MOTOR = 13;
     
-    public static final int DRIVETRAIN_BACK_LEFT_ANGLE_MOTOR = 16;
+    public static final int DRIVETRAIN_BACK_LEFT_ANGLE_MOTOR = 0;
     public static final int DRIVETRAIN_BACK_LEFT_ANGLE_ENCODER = 0;
     public static final int DRIVETRAIN_BACK_LEFT_DRIVE_MOTOR = 1;
 
-    public static final int DRIVETRAIN_BACK_RIGHT_ANGLE_MOTOR = 2;
+    public static final int DRIVETRAIN_BACK_RIGHT_ANGLE_MOTOR = 1;
     public static final int DRIVETRAIN_BACK_RIGHT_ANGLE_ENCODER = 1;
     public static final int DRIVETRAIN_BACK_RIGHT_DRIVE_MOTOR = 3;
     

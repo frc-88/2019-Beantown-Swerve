@@ -36,6 +36,7 @@ public final class SubsystemManager {
 		for (Subsystem subsystem : subsystems) {
 			subsystem.resetKinematics(timestamp);
 		}
+		System.out.println("kinematic loop");
 		kinematicThread.startPeriodic(period);
 	}
 
